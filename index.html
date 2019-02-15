@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="src/styles/main.css">
+	<script src="src/scripts/jquery.min.js"></script>
+	<title>Mini Portfolio</title>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1 class="name">personal minifolio</h1>
+			<button class="menu__toggle">&#x2261;</button>
+			<nav class="menu">
+				<a href="#" class="menu__item">home</a>
+				<a href="#about" class="menu__item">about</a>
+				<a href="#portfolio" class="menu__item">portfolio</a>
+				<a href="#contact" class="menu__item">contact</a>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section id="home" style="background-image: url('src/images/climber.jpg');">
+			<div class="container">
+				<h2 class="sectionHeader hello">Hello! I'm looking for a job</h2>
+			</div>
+		</section>
+		<div class="container">
+			<article id="about">
+				<h2 class="articleHeader about">about me</h2>
+				<section class="aboutSection">
+					<h4 class="aboutSection__header">Biography</h4>
+					<p class="aboutSection__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse autem soluta quisquam harum totam perspiciatis velit fuga sapiente voluptatibus reprehenderit laudantium a, ad vero at quidem aliquam cum odit porro beatae, blanditiis sed exercitationem dolores necessitatibus optio! Sapiente, fugit, expedita.</p>
+				</section>
+				<section class="aboutSection">
+					<h4 class="aboutSection__header">Education</h4>
+					<p class="aboutSection__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae corporis ipsum maxime repellendus! Ullam libero dolor aperiam reiciendis facilis repellendus non unde id ipsum quibusdam hic similique facere maiores minima earum omnis adipisci debitis, maxime inventore, praesentium necessitatibus aliquid rerum.</p>
+				</section>
+				<section class="aboutSection">
+					<h4 class="aboutSection__header">LifeStyle</h4>
+					<p class="aboutSection__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quasi possimus fuga, quas vero necessitatibus. Perferendis, deleniti rem natus nostrum consectetur quam maxime laboriosam velit error, id itaque. Debitis, vitae.</p>
+				</section>
+			</article>
+			<article class="portfolio" id="portfolio">
+				<h2 class="articleHeader portfolio__header">some of my work</h2>
+				<div class="portfolio__items">
+<!-- 				<a href="/docs/cartoon" class="portfolio__link"><img src="src/images/cartoon.png" alt="cartoon" class="portfolio__image"></a>
+ -->	
+					<a href="docs/gallery" class="portfolio__link"><img src="src/images/gallery.png" alt="cats" class="portfolio__image"></a>
+					<a href="docs/game" class="portfolio__link"><img src="src/images/game.png" alt="game" class="portfolio__image"></a>
+					<a href="docs/payments" class="portfolio__link"><img src="src/images/payments.png" alt="payments" class="portfolio__image"></a>
+					<a href="docs/cats" class="portfolio__link"><img src="src/images/cats.png" alt="cats" class="portfolio__image"></a>
+		 			<a href="docs/landing" class="portfolio__link"><img src="src/images/landing.png" alt="landing" class="portfolio__image"></a>
+					<iframe scrolling="no" class="portfolio__iframe" src="docs/cartoon/index.html" frameborder="0">Your browser doesn't support</iframe>
+				</div>
+			</article>
+			<article class="contacts" id="contact">
+				<h2 class="articleHeader contacts__header">contact me</h2>
+				<p class="contacts__email"><a href="mailto:alex_efim@inbox.ru">alex_efim@inbox.ru</a></p>
+				<p class="contacts__phone"><span>+7 919-968-7165</span></p>
+			</article>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus blanditiis, nostrum! Incidunt aspernatur reprehenderit dicta, quam iste non culpa asperiores!</p>
+			<p class="footer__copyright">&copy; 2019 No rights reserved</p>
+		</div>
+	</footer>
+	<script src="src/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/masonry.min.js"></script>
+	<script src="scripts/imagesloaded.min.js"></script>
+	<title>Gallery</title>
+</head>
+<body>
+	<header>
+		<h1 class="logo"><a href="index.html" class="logo__link">gallery</a></h1>
+		<nav class="menu">
+			<button class="menu__toggle"></button>
+			<ul class="menu__list">
+				<li class="menu__item active"><a href="index.html" class="menu__link">home</a></li>
+				<li class="menu__item"><a href="#" class="menu__link">albums</a></li>
+				<li class="menu__item"><a href="#" class="menu__link">archives</a></li>
+				<li class="menu__item"><a href="#" class="menu__link">contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<article class="gallery">
+			<div class="gallery__modal hidden">
+				<button class="close">&times;</button>
+				<button class="next">&#8250;</button>
+				<button class="previous">&#8249;</button>
+			</div>
+			<div class="gallery__wrapper">
+				<div class="imageCard">
+					<img src="images/city.jpg" alt="city" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">city</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/lighthouse.jpg" alt="lighthouse" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">lighthouse</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/clouds.jpg" alt="clouds" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">mountain clouds</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/lightstorm.jpg" alt="lightstorm" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">lightstorm</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/lava.jpg" alt="lava" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">lava</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/stars.jpg" alt="stars" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">starry sky</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/sunset.jpg" alt="sunset" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">sunset</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/rock.jpg" alt="rock" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">rock</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/leaves.jpg" alt="leaves" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">leaves</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/tower.jpg" alt="tower" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">tower</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/forest.jpg" alt="forest" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">forest</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/waterfall.jpg" alt="waterfall" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">waterfall</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/seashore.jpg" alt="seashore" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">seashore</h3>
+					</div>
+				</div>
+				<div class="imageCard">
+					<img src="images/dock.jpg" alt="dock" class="imageCard__image">
+					<div class="imageCard__overlay">
+						<h3 class="imageCard__caption">dock</h3>
+					</div>
+				</div>
+			</div>
+			<!-- TODO implement this button functionality if you care -->
+			<!-- <button class="gallery__button">load more</button> -->
+		</article>
+		<a href="#" class="to-top"></a>
+	</main>
+	<footer>
+		<p class="copyright">Copyright &copy; 2019 <span>gallery</span></p>
+		<ul class="social">
+			<li class="social__item"><a href="https://vk.com" class="social__link vk"></a></li>
+			<li class="social__item"><a href="https://facebook.com" class="social__link fb"></a></li>
+			<li class="social__item"><a href="https://www.pinterest.com" class="social__link pinterest"></a></li>
+			<li class="social__item"><a href="https://www.instagram.com" class="social__link instagram"></a></li>
+			<li class="social__item"><a href="https://telegram.org" class="social__link telegram"></a></li>
+		</ul>
+	</footer>
+	<script src="scripts/main.js"></script>
+</body>
+</html>

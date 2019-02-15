@@ -1,0 +1,472 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Arial MT";
+  src: url(c790f65aa0a110434c0b23b00089086c.woff2) format("woff2"), url(baf60fee816b08e82f59a5474fea9647.woff) format("woff"), url(c60ff9d60d3f72a6980b9ba3ea7ec796.eot) format("eot"), url(1dace669169a75ded2777fde45beaf61.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 700;
+  src: url(c9e6ced6ee6d6f30cc5d3de2a811c27a.woff2) format("woff2"), url(f87c7980e3c04b47aec2e1c182308aeb.woff) format("woff"), url(0b381610df444c3b25cb150f5eba2576.eot) format("eot"), url(470dc6a3ee4054e3ded6a3eaf3973018.ttf) format("truetype"); }
+
+/*==========================================
+=            Main blocks layout            =
+==========================================*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  background-color: #101114; }
+
+body {
+  width: 960px;
+  height: 100%;
+  font-size: 0;
+  margin: auto; }
+
+.wrapper {
+  min-height: 100%;
+  width: 639px;
+  display: inline-block;
+  position: relative; }
+
+aside {
+  width: 318px;
+  height: 100%;
+  min-height: 100vh;
+  display: inline-block;
+  vertical-align: top;
+  font: 700 18px/24px "Open Sans", sans-serif; }
+
+main {
+  width: 639px;
+  min-height: calc(100vh - 263px);
+  display: inline-block;
+  background-color: #ffffff;
+  font: 400 16px/21px "Arial MT", serif; }
+
+footer {
+  width: 639px;
+  height: 263px;
+  padding: 26px 45px 33px 29px;
+  background-color: #373c43; }
+
+/*===========================================
+=            Sidebar menu styles            =
+===========================================*/
+.menu {
+  height: 375px;
+  position: relative; }
+
+.menu__list {
+  background-color: #1f2229;
+  list-style: none;
+  padding: 0; }
+
+.menu__item {
+  height: 75px;
+  padding: 28px; }
+
+.menu__link {
+  color: #ffffff;
+  text-decoration: none; }
+  .menu__link:hover .menu__linkvisited .menu__linkactive {
+    color: white; }
+
+.menu__item_current {
+  background-color: #2a2d37; }
+
+.menu__item:nth-child(n+3) {
+  background-color: #191c24; }
+
+.menu__link_current,
+.menu__link_quit {
+  color: #808592; }
+
+.menu__link_current:after {
+  content: " (активная)"; }
+
+.menu-close {
+  position: absolute;
+  right: 0;
+  display: none;
+  width: 50px;
+  height: 50px;
+  margin: 12px;
+  overflow: hidden; }
+  .menu-close:hover::before, .menu-close:hover::after {
+    background: #ffffff;
+    cursor: pointer; }
+  .menu-close::before, .menu-close::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #808592; }
+  .menu-close::before {
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .menu-close::after {
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+
+/*=========================================
+=            Main block styles            =
+=========================================*/
+article {
+  padding: 45px 45px 45px 29px;
+  height: 100%; }
+
+.menu-open {
+  display: none;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer; }
+  .menu-open .menu-open__span, .menu-open .menu-open__span::before, .menu-open .menu-open__span::after {
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: #8494ab;
+    border-radius: 5px;
+    position: absolute;
+    top: 15px;
+    left: 25px; }
+    .menu-open .menu-open__span::before, .menu-open .menu-open__span::after {
+      content: "";
+      left: 0; }
+    .menu-open .menu-open__span::before {
+      top: 10px; }
+    .menu-open .menu-open__span::after {
+      top: 20px; }
+
+/**
+ *
+ * Bill information section styles
+ *
+ */
+.bill-details {
+  color: #8494ab;
+  font: 400 16px/21px "Arial MT", serif; }
+
+.bill-details__header {
+  padding: 0;
+  margin: 0 0 23px 0;
+  font: 400 16px/21px "Arial MT", serif; }
+
+.bill-details__list {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.bill-details__item:first-child {
+  margin-bottom: 11px; }
+
+.bill-details__item-key {
+  display: inline-block;
+  width: 160px; }
+
+.bill-details__item-value {
+  color: #373c43; }
+
+/**
+ *
+ * Card form styles
+ *
+ */
+.card-form {
+  position: relative; }
+
+.card-form__header {
+  font: 700 22px/25px "Open Sans", sans-serif;
+  color: #373c43;
+  margin: 35px 0 22px 0; }
+
+.card-form__block {
+  width: 350px;
+  height: 236px;
+  border: 1px solid #e4e9ee;
+  border-radius: 10px;
+  padding: 16px; }
+
+/**
+ *
+ * Fron side of card styles
+ *
+ */
+.card-form__block_front {
+  position: relative;
+  z-index: 10;
+  background-color: #ffffff; }
+
+.card-form__paragraph {
+  margin: 5px 0;
+  font: 400 16px/21px "Arial MT", serif;
+  color: #8494ab; }
+
+.card-form__input {
+  height: 42px;
+  border: 1px solid #e4e9ee;
+  font: 400 16px/21px "Arial MT", serif;
+  color: #373c43;
+  padding: 10px;
+  outline: none;
+  text-align: center; }
+  .card-form__input:focus {
+    box-shadow: 0 0 5px #51cbee; }
+
+.input_invalid {
+  border: 1px solid #b30b2c;
+  box-shadow: 0 0 5px #d6042e; }
+
+.card-form__input_number {
+  width: 65px;
+  color: #373c43;
+  margin-right: 4px; }
+
+.card-form__input-wrapper {
+  display: inline-block;
+  position: relative;
+  margin-right: 4px; }
+  .card-form__input-wrapper.card-form__input-wrapper_month {
+    width: 70px; }
+  .card-form__input-wrapper.card-form__input-wrapper_year {
+    width: 86px; }
+
+.card-form__arrow {
+  border: solid #c9cfd7;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  width: 6px;
+  position: absolute;
+  right: 8px;
+  bottom: 18px;
+  cursor: pointer;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg); }
+  .card-form__arrow:hover {
+    border-color: #373c43; }
+  .card-form__arrow.card-form__arrow_up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg); }
+
+.card-form__input_date {
+  padding-right: 20px;
+  width: inherit; }
+
+.card-form__list {
+  width: inherit;
+  position: absolute;
+  top: 42px;
+  list-style: none;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e4e9ee;
+  border-top: none; }
+  .card-form__list .card-form__item {
+    padding: 3px; }
+    .card-form__list .card-form__item:hover {
+      background-color: #004ea5;
+      color: #ffffff;
+      cursor: pointer; }
+
+.card-form__list_hidden {
+  display: none; }
+
+.card-form__input_holder {
+  width: 100%;
+  margin-top: 12px;
+  padding: 15px;
+  text-align: left; }
+
+/**
+ *
+ * Back side of card styles
+ *
+ */
+.card-form__block_back {
+  position: absolute;
+  z-index: 1;
+  top: 70px;
+  left: 194px; }
+
+.card-form__block_strip {
+  width: 350px;
+  height: 42px;
+  background-color: #e4e9ee;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  position: relative;
+  left: -16px; }
+
+.card-form__block_code {
+  float: right;
+  margin-top: 16px;
+  position: relative;
+  font-size: 0; }
+
+.card-form__block_code {
+  font-size: 0; }
+
+.card-form__block_code {
+  font: 400 16px/26px "Arial MT", serif; }
+
+.card-form__input_code {
+  width: 140px;
+  text-align: left;
+  padding-left: 20px; }
+
+.card-form__hint {
+  width: 0;
+  display: inline-block; }
+
+.card-form__hint::before {
+  content: "?";
+  text-align: center;
+  font: 400 16px/26px "Arial MT", serif;
+  display: inline-block;
+  border: 1px solid #c2c9d2;
+  color: #c2c9d2;
+  border-radius: 13px;
+  width: 26px;
+  height: 26px;
+  position: relative;
+  right: 40px;
+  cursor: pointer; }
+
+.card-form__hint:hover::before {
+  color: #373c43;
+  border-color: #373c43; }
+
+.card-form__hint::after {
+  content: "Трёхзначный номер, расположенный на обратной сторое вашей карты.";
+  display: block;
+  width: 100px;
+  position: absolute;
+  right: -25px;
+  top: 105%;
+  border: 1px solid #e4e9ee;
+  font: 12px "Arial MT", serif;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px; }
+
+.card-form__hint_hidden::after {
+  display: none; }
+
+.card-form__button {
+  width: 133px;
+  height: 40px;
+  background-color: #004ea5;
+  background-image: linear-gradient(to top, rgba(37, 36, 35, 0.18) 0%, rgba(37, 36, 35, 0) 100%);
+  color: #ffffff;
+  padding: 10px 24px;
+  font: 700 14px/18px "Opne Sans", sans-serif;
+  margin: 40px 15px 0 15px;
+  border-radius: 20px;
+  border: none; }
+  .card-form__button:hover {
+    cursor: pointer; }
+
+/*=====  End of Form styles  ======*/
+/*=====================================
+=            Footer styles            =
+=====================================*/
+.footer-block__paragraph {
+  font: 12px/18px "Arial MT", Arial, serif;
+  color: #89909d;
+  padding-bottom: 1em; }
+
+/*==========================================
+=            Responsive layouts            =
+==========================================*/
+@media screen and (max-width: 1000px) {
+  body {
+    position: relative;
+    width: 100%; }
+  aside {
+    position: absolute;
+    z-index: 100;
+    overflow: hidden;
+    display: none;
+    background-color: #1f2229; }
+  .wrapper {
+    width: 100%; }
+    .wrapper main,
+    .wrapper footer {
+      width: 100%; }
+  article {
+    margin: auto;
+    width: 600px; }
+  .menu-open {
+    display: block; }
+  .menu-close {
+    display: inline-block; } }
+
+@media screen and (max-width: 720px) {
+  body {
+    position: relative;
+    width: 100%; }
+  aside {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    min-height: auto;
+    display: none; }
+  .wrapper {
+    width: 100%; }
+    .wrapper main,
+    .wrapper footer {
+      width: 100%; }
+  footer {
+    height: auto; }
+  article {
+    width: 370px;
+    margin: auto;
+    padding: 45px 0; }
+  .menu-open {
+    right: 0; }
+  .card-form__block_back {
+    position: static;
+    margin-top: 20px; } }
+
+@media screen and (max-width: 420px) and (min-width: 320px) {
+  article {
+    padding: 30px 20px;
+    width: auto; }
+  footer {
+    padding: 20px; }
+  .card-form__block {
+    width: auto;
+    height: auto;
+    border: none;
+    padding: 0; }
+  .card-form__block_strip {
+    display: none; }
+  .card-form__block_code {
+    float: none; }
+  .card-form__input {
+    padding: 10px; }
+  .card-form__input_number,
+  .card-form__input-wrapper {
+    margin: 0; }
+  .card-form__button {
+    margin-left: 0; }
+  .card-form__hint::after {
+    left: 150px;
+    top: 0; } }
+

@@ -1,0 +1,93 @@
+.box_front {
+    animation: DayParts 100s linear infinite;
+}
+
+.ship {
+    animation: ShipMove 60s linear infinite;
+}
+
+.smoke-1 {
+    animation: ShipSmoke 3s linear infinite 2s;
+}
+
+.smoke-2 {
+    animation: ShipSmoke 3s linear infinite 1s;
+}
+
+.smoke-3{
+    animation: ShipSmoke 3s linear infinite;
+}
+
+.sun {
+    animation: SunSpin 10s linear infinite forwards;
+}
+
+.sun-wrapper {
+    animation: SunSpin 100s linear infinite forwards;
+}
+
+.cloud {
+    animation: CloudAnimation linear infinite;
+}
+
+.cloud-1 {
+    animation-duration: 50s;
+}
+
+.cloud-2 {
+    animation-duration: 40s;
+    animation-delay: 10s;
+}
+
+.cloud-3 {
+    animation-duration: 30s;
+}
+
+.cloud-4 {
+    animation-duration: 20s;
+    animation-delay: 5s;
+}
+
+@keyframes CloudAnimation {
+    to {
+        left: 500px;
+    }
+}
+
+@keyframes SunSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ShipMove {
+    from {
+        transform: translateX(150px);
+    }
+    to {
+        transform: translateX(-650px);
+    }
+}
+
+@keyframes ShipSmoke {
+    from {opacity: 1;}
+    to {
+        transform: translateY(-20px) scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes DayParts {
+    0%, 10% {
+        background: skyblue;
+        box-shadow: 0 -400px 300px -300px steelblue inset;
+    }
+    30% {
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px orangered inset;
+    }
+    45%, 65% {
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px transparent inset;
+    }
+}

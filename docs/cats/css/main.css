@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* СТИЛИ HTML И BODY ПОДОБРАНЫ ТАК, ЧТОБЫ ПОДВАЛ ВСЕГДА НАХОДИЛСЯ ВНИЗУ СТРАНИЦЫ */
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  padding: 0;
+  margin: 0 0 50px;
+}
+
+/* СТИЛИ ШАПКИ */
+
+header{
+  width: 100%;
+  height: 64px;
+  background-color: #aabbcc;
+  padding-left: 16px;
+}
+
+#logo img, h1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#logo h1 {
+  margin: 0 8px;
+}
+
+/* ОСНОВНОЙ КОНТЕНТ */
+
+article {
+  width: 100%;
+  padding: 1%;
+}
+
+/*СТИЛИ ДЛЯ ПЕРЕКЛЮЧАТЕЛЯ СПИСОК/ПЛИТКА*/
+
+.switcher-input {display:none;}
+
+.switch-label {
+  display: inline-block;
+}
+.switch-label[for="list-view"]{width: 46px;}
+.switch-label[for="grid-view"]{width: calc(98% - 46px);}
+.switch-label>i{
+  border: 2px outset #999999;
+  background-color: #e6e6e6;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 2em;
+}
+
+input:checked+.switch-label>i{
+  border-style: inset;
+  background-color: #4d4d4d;
+  color: #fff;
+}
+
+.cat-card {
+  padding: 0 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* АДАПТИВНОСТЬ ШИРИНЫ КАРТОЧЕК В ЗАВИСИМОСТИ ОТ РАЗРЕШЕНИЯ ЭКРАНА */
+@media screen and (min-width: 1200px){
+  .cat-card {width: 24.5%;}
+}
+
+@media screen and (max-width: 1199px) {
+  .cat-card {width: 32.5%;}
+}
+.cat-image {max-width: 100%;}
+/* ПРОЗРАЧНОСТЬ КАРТИНКИ ПРИ НАВЕДЕНИИ НА КАРТОЧКУ */
+.cat-card:hover .cat-image {opacity: 0.7;}
+/* ОТОБРАЖАЕМ ССЫЛКИ В КАРТОЧКЕ КАК БЛОЧНЫЙ ЭЛЕМЕНТ */
+.cat-name {display: block;}
+
+.cat-category {
+  padding: 0;
+  margin:2px 0;
+}
+.cat-category__item {
+  display: inline-block;
+}
+.cat-category__item ~ .cat-category__item:before {
+  content: '/ ';
+}
+/* ИЗМЕНЕНИЕ ЦВЕТА ПРИ НАВЕДЕНИИ НА ИМЯ И КАТЕГОРИЮ */
+.cat-category__link:hover, .cat-name:hover {color: #f00;}
+.cat-image:hover + .cat-info-wrapper .cat-name {color: #f00;}
+/* ОБРЕЗКА ДЛИННЫХ ИМЁН */
+.cat-name {
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*РЕАЛИЗАЦИЯ ЗВЕЗДНОГО РЕЙТИГА*/
+.star-input{display: none;}
+.stars {
+  color: orange;
+  float: left;
+  font-size: 1.2em;
+  padding-top: 5px;
+}
+
+.star-ico{
+  float: right;
+  position: relative;
+  width: 0.5em;
+  height: 1em;
+}
+
+.full-star {
+  padding-right: .1em;
+}
+
+.full-star:before {
+  content: "\f006";
+  position: absolute;
+  left: -0.5em;
+}
+
+.star-ico:hover{
+  cursor: pointer;
+}
+
+.full-star:hover ~ .full-star:before,
+.half-star:hover ~ .full-star:before,
+.stars:not(:hover) .star-input:checked ~ .full-star:before,
+.full-star:hover:before {
+  content: "\f005";
+}
+
+.half-star:hover + .half-star:before,
+.stars:not(:hover) .input-half:checked + .half-star:before,
+.half-star:hover:before {
+  content: "\f123";
+  position: absolute;
+  z-index: -1;
+}
+
+/* СТИЛИ ДЛЯ ЦЕННИКОВ */
+.price {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.old-price {
+  font-size: 0.9em;
+  text-decoration: line-through;
+  font-weight: normal;
+  color: #4a4a4a;
+}
+
+
+#list-view:checked ~ .cat-card {
+  display: block;
+  width: 100%;
+}
+
+#list-view:checked ~ .cat-card>* {
+  display: block;
+  vertical-align: top;
+}
+
+#list-view:checked ~ .cat-card > .cat-info-wrapper {
+  overflow: hidden;
+}
+
+#list-view:checked ~ .cat-card > .cat-info-wrapper>* {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 2%;
+}
+
+#list-view:checked ~ .cat-card .description {width: 38%;}
+
+#list-view:checked ~ .cat-card .description h4 {margin-top: 10px;}
+
+#list-view:checked ~ .cat-card .cat-info {width: 58%;}
+
+#list-view:checked ~ .cat-card > .cat-image {
+  max-width: 30%;
+  float: left;
+}
+
+/* ПОДВАЛ САЙТА */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding-left: 16px;
+  background-color: #f5f5f5;
+  width: 100%;
+  border-top: 1px solid #000;
+}

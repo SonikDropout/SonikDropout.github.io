@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='dist/styles.css'>
+	<title>Junior Developer TT</title>
+</head>
+<body>
+	<!--============================================
+	=            Sidebar naigation menu            =
+	=============================================-->
+	
+	<aside>
+		<nav class="menu">
+			<div class="menu-close"></div>
+			<ul class="menu__list">
+				<li class="menu__item"><a href="#" class="menu__link">Личный кабинет</a></li>
+				<li class="menu__item menu__item_current"><a href="#" class="menu__link menu__link_current">Платежи</a></li>
+				<li class="menu__item"><a href="#" class="menu__link">История платежей</a></li>
+				<li class="menu__item"><a href="#" class="menu__link">Настройки</a></li>
+				<li class="menu__item menu__item_current"><a href="#" class="menu__link menu__link_quit">Выйти</a></li>
+			</ul>
+		</nav>
+	</aside>
+	
+	<div class="wrapper">
+		<div class="menu-open">
+			<span class="menu-open__span"></span>
+		</div>
+		<!--=======================================
+		=            Main section with form       =
+		========================================-->
+		<main>
+			<article>
+				<div class="bill-details">
+					<h5 class="bill-details__header">Информация по оплате:</h5>
+					<ul class="bill-details__list">
+						<li class="bill-details__item"><span class="bill-details__item-key">Номер счета:</span><span class="bill-details__item-value">87123658716587</span></li>
+						<li class="bill-details__item"><span class="bill-details__item-key">Сумма платежа:</span><span class="bill-details__item-value">100 руб.</span></li>
+					</ul>
+				</div>
+				 <form class="card-form">
+				 	<h3 class="card-form__header">Данные банковской карты</h3>
+				 	<div class="card-form__block card-form__block_front">
+				 		<p class="card-form__paragraph">Номер карты</p>
+						<input type="text" name="number-pt1" class="card-form__input card-form__input_number">
+						<input type="text" name="number-pt2" class="card-form__input card-form__input_number">
+						<input type="text" name="number-pt3" class="card-form__input card-form__input_number">
+						<input type="text" name="number-pt4" class="card-form__input card-form__input_number">
+						<p class="card-form__paragraph">Срок действия</p>
+						<div class="card-form__input-wrapper card-form__input-wrapper_month"><input type="text" name="month" class="card-form__input card-form__input_date card-form__input_month"><i class="card-form__arrow"></i><ul class="card-form__list card-form__list_month card-form__list_hidden"></ul></div>
+						<div class="card-form__input-wrapper card-form__input-wrapper_year"><input type="text" name="year" class="card-form__input card-form__input_date card-form__input_year"><i class="card-form__arrow"></i><ul class="card-form__list card-form__list_year card-form__list_hidden"></ul></div>
+						<input type="text" name="card_holder" class="card-form__input card-form__input_holder" placeholder="Держатель карты">
+				 	</div>
+					<div class="card-form__block card-form__block_back">
+						<div class="card-form__block card-form__block_strip"></div>
+						<div class="card-form__block_code">
+							<p class="card-form__paragraph">Код CVV2/CVC2</p>
+							<input type="text" name="code" class="card-form__input card-form__input_code">
+							<i class="card-form__hint card-form__hint_hidden"></i>
+						</div>
+					</div>
+					<button type="submit" class="card-form__button card-form__button_submit">Оплатить</button>
+				 </form>
+			</article>
+		</main>
+		<!--====================================
+		=            Footer section            =
+		=====================================-->
+		
+		<footer>
+			<div class="footer-block">
+				<p class="footer-block__paragraph">Исходя из астатической системы координат Булгакова, соединение стабильно. Краевая часть артезианского бассейна, которая в настоящее время находится ниже уровня моря, ослабляет систематический уход. Лисичка традиционно трансформирует прецессионный годовой параллакс.</p>
+				<p class="footer-block__paragraph">Выклинивание абсолютно аккумулирует твердый pадиотелескоп Максвелла.</p>
+				<p class="footer-block__paragraph">Устойчивость, например, параллельна. Аргумент перигелия определяет боксит. Проекция вертикально дает уходящий диабаз. Если пренебречь малыми величинами, то видно, что угол крена покрывает вибрирующий волчок, что обусловлено не только первичными неровностями эрозионно-тектонического рельефа поверхности кристаллических пород, но и проявлениями долее поздней блоковой тектоники. Засветка неба заставляет иначе взглянуть на то, что такое волчок.</p>
+			</div>
+		</footer>
+	</div>
+	<script src="dist/bundle.js"></script>
+</body>
+</html>
