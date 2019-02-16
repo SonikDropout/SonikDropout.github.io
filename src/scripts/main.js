@@ -19,7 +19,7 @@ $(function() {
 		cartoonIframeHtml.css('cursor', 'pointer');
 
 		// open cartoon in separate tab on click
-		cartoonIframeHtml.click(function() {
+		cartoonIframe.contents().click(function() {
 			window.open(cartoonIframe.attr('src'));
 		});
 
