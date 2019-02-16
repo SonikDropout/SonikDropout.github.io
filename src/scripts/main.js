@@ -10,6 +10,11 @@ $(function() {
 
 	// iframe document manipulation on load
 	const cartoonIframe = $('.portfolio__iframe');
+	
+	// open cartoon in separate tab on click
+	cartoonIframe.contents().click(function() {
+		window.open(cartoonIframe.attr('src'));
+	});
 
 	cartoonIframe.contents().ready(function () {
 		const cartoonIframeHtml = cartoonIframe.contents().find("html");
@@ -17,12 +22,6 @@ $(function() {
 
 		// change cursor to pointer on cartoon click
 		cartoonIframeHtml.css('cursor', 'pointer');
-
-		// open cartoon in separate tab on click
-		cartoonIframe.contents().click(function() {
-			window.open(cartoonIframe.attr('src'));
-		});
-
 
 		//scale cartoon canvas so it would fit into iframe
 		let scale = cartoonIframeHtml.width()/cartoonIframeCanvas.width();
