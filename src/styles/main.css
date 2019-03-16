@@ -38,6 +38,63 @@ article {
 button:hover {
   cursor: pointer; }
 
+.btn {
+  --offset: 5px;
+  --border-size: 1px;
+  display: block;
+  position: relative;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #39558e;
+  font-size: 1.2rem;
+  line-height: 2;
+  padding: 0 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  outline: none;
+  font-weight: bold;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  transition: background .8s ease; }
+  .btn:hover {
+    background: rgba(100, 0, 0, 0.03); }
+  .btn__horizontal, .btn__vertical {
+    display: block;
+    position: absolute;
+    top: var(--horizontal-offset, 0);
+    right: var(--vertical-offset, 0);
+    bottom: var(--horizontal-offset, 0);
+    left: var(--vertical-offset, 0);
+    transition: transform .8s ease;
+    will-change: transform; }
+    .btn__horizontal::before, .btn__vertical::before {
+      content: '';
+      position: absolute;
+      border: inherit; }
+  .btn__horizontal {
+    --vertical-offset: calc(var(--offset) * -1);
+    border-top: var(--border-size) solid currentcolor;
+    border-bottom: var(--border-size) solid currentcolor; }
+    .btn__horizontal::before {
+      top: calc(var(--vertical-offset) - var(--border-size));
+      bottom: calc(var(--vertical-offset) - var(--border-size));
+      left: calc(var(--vertical-offset) * -1);
+      right: calc(var(--vertical-offset) * -1); }
+  .btn:hover .btn__horizontal {
+    transform: scaleX(0); }
+  .btn__vertical {
+    --horizontal-offset: calc(var(--offset) * -1);
+    border-left: var(--border-size) solid currentcolor;
+    border-right: var(--border-size) solid currentcolor; }
+    .btn__vertical::before {
+      top: calc(var(--horizontal-offset) * -1);
+      bottom: calc(var(--horizontal-offset) * -1);
+      left: calc(var(--horizontal-offset) - var(--border-size));
+      right: calc(var(--horizontal-offset) - var(--border-size)); }
+  .btn:hover .btn__vertical {
+    transform: scaleY(0); }
+
 header {
   position: absolute;
   top: 20px;
@@ -104,11 +161,33 @@ header {
   text-align: center; }
   .contacts__header {
     margin-bottom: 1rem; }
-  .contacts__phone {
-    font-size: 1.4rem;
+  .contacts__successMessage {
+    font-size: 1.2rem;
     font-weight: bold; }
-  .contacts__email a {
-    text-decoration: none; }
+  .contactsForm {
+    max-width: 500px;
+    margin: auto; }
+    .contactsForm__group {
+      display: block;
+      margin-bottom: .5rem;
+      text-align: left; }
+      .contactsForm__group:last-child {
+        margin-bottom: 0;
+        margin-top: 1.5rem; }
+    .contactsForm__hint {
+      color: #C81D25; }
+    .contactsForm__input {
+      display: block;
+      width: 100%;
+      line-height: 1.7;
+      font-size: 1.2rem;
+      padding: 0 .5rem;
+      border: 1px solid #7D8491; }
+      .contactsForm__input.invalid {
+        border-color: #C81D25;
+        box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.6); }
+    .contactsForm__btn {
+      margin: auto; }
 
 .footer {
   text-align: center;

@@ -84,8 +84,29 @@
 			</article>
 			<article class="contacts" id="contact">
 				<h2 class="articleHeader contacts__header">contact me</h2>
-				<p class="contacts__email"><a href="mailto:alex_efim@inbox.ru">alex_efim@inbox.ru</a></p>
-				<p class="contacts__phone"><span>+7 919-968-7165</span></p>
+				<form action="https://formspree.io/alex_efim@inbox.ru" autocomplete="off" class="contactsForm" novalidate="true"
+					method="POST" target="_blank">
+					<label class="contactsForm__group">
+						<input type="text" placeholder="Your name *" name="name" class="contactsForm__input" required>
+						<span class="contactsForm__hint"></span>
+					</label>
+					<label class="contactsForm__group">
+						<input type="email" placeholder="Your email *" name="email" class="contactsForm__input" required>
+						<span class="contactsForm__hint"></span>
+					</label>
+					<label class="contactsForm__group">
+						<textarea type="text" rows="5" placeholder="Your message *" name="message" class="contactsForm__input"
+							required></textarea>
+						<span class="contactsForm__hint"></span>
+					</label>
+					<div class="contactsForm__group">
+						<button type="submit" class="contactsForm__btn btn">
+							Send
+							<span class="btn__horizontal"></span>
+							<span class="btn__vertical"></span>
+						</button>
+					</div>
+				</form>
 			</article>
 		</div>
 	</main>

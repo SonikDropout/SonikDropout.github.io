@@ -53,6 +53,86 @@ article {
 
 button:hover { cursor: pointer; }
 
+.btn {
+	
+	--offset: 5px;
+	--border-size: 1px;
+	
+	display: block;
+	position: relative;
+	appearance: none;
+	border: 0;
+	background: transparent;
+	color: darken($btnColor, 10%);
+	font-size: 1.2rem;
+	line-height: 2;
+	padding: 0 1.3rem;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	outline: none;
+	font-weight: bold;
+	border-radius: 0;
+	box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+	transition: background .8s ease;
+	
+	&:hover {
+		background: rgba(100, 0, 0, .03);
+	}
+	
+	&__horizontal,
+	&__vertical {
+		display: block;
+		position: absolute;
+		top: var(--horizontal-offset, 0);
+		right: var(--vertical-offset, 0);
+		bottom: var(--horizontal-offset, 0);
+		left: var(--vertical-offset, 0);
+		transition: transform .8s ease;
+		will-change: transform;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			border: inherit;
+		}
+	}
+	
+	&__horizontal {
+		--vertical-offset: calc(var(--offset) * -1);
+		border-top: var(--border-size) solid currentcolor;
+		border-bottom: var(--border-size) solid currentcolor;
+		
+		&::before {
+			top: calc(var(--vertical-offset) - var(--border-size));
+			bottom: calc(var(--vertical-offset) - var(--border-size));
+			left: calc(var(--vertical-offset) * -1);
+			right: calc(var(--vertical-offset) * -1);
+		}
+	}
+	
+	&:hover &__horizontal {
+		transform: scaleX(0);
+	}
+	
+	&__vertical {
+		--horizontal-offset: calc(var(--offset) * -1);
+		border-left: var(--border-size) solid currentcolor;
+		border-right: var(--border-size) solid currentcolor;
+		
+		&::before {
+			top: calc(var(--horizontal-offset) * -1);
+			bottom: calc(var(--horizontal-offset) * -1);
+			left: calc(var(--horizontal-offset) - var(--border-size));
+			right: calc(var(--horizontal-offset) - var(--border-size));
+		}
+	}
+	
+	&:hover &__vertical {
+		transform: scaleY(0);
+	}
+	
+}
+
 header {
 	position: absolute;
 	top: 20px;
@@ -150,13 +230,47 @@ header {
 		margin-bottom: 1rem;
 	}
 
-	&__phone {
-		font-size: 1.4rem;
+	&__successMessage {
+		font-size: 1.2rem;
 		font-weight: bold;
 	}
 
-	&__email a {
-		text-decoration: none;
+	&Form {
+		max-width: 500px;
+		margin: auto;
+
+		&__group {
+			display: block;
+			margin-bottom: .5rem;
+			text-align: left;
+			
+			&:last-child {
+				margin-bottom: 0;
+				margin-top: 1.5rem;
+			}
+		}
+		
+		&__hint {
+			color: $dangerColor;
+		}
+
+		&__input {
+			display: block;
+			width: 100%;
+			line-height: 1.7;
+			font-size: 1.2rem;
+			padding: 0 .5rem;
+			border: 1px solid #7D8491;
+
+			&.invalid {
+				border-color: $dangerColor;
+				box-shadow: 0 0 3px 1px rgba(255, 0, 0, .6);
+			}
+		}
+
+		&__btn {
+			margin: auto;
+		}
 	}
 }
 
