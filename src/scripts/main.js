@@ -53,6 +53,8 @@ $(function () {
 		};
 
 		Object.keys(inputs).forEach(key => {
+			inputs[key].removeClass('invalid');
+			inputs[key].siblings('.contactsForm__hint').text('');
 			if (!inputsRe[key].test(inputs[key].val())) {
 				inputs[key].siblings('.contactsForm__hint').text(invalidMesssages[key]);
 				inputs[key].addClass('invalid');
